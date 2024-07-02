@@ -23,7 +23,7 @@ const filterByEmail = async (req, res, next) => {
   const userEmail = req.params.email;
 
   try {
-    const userMail = await Loan.findById(userEmail).populate("comments");
+    const userMail = await Loan.findById(userEmail).populate("email");
 
     if (!userMail) {
       throw new NotFoundError(`No email found with ID: ${userEmail}`);
